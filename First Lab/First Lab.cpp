@@ -35,7 +35,8 @@ int ActionChooser() {
 }
 void QuadraticEquation() {
 	double a, b, c;
-	
+	complex <double> x1;
+	complex <double> x2;
 	cout << "a = " << endl;
 	cin >> a;
 	cout << "b= " << endl;
@@ -44,21 +45,30 @@ void QuadraticEquation() {
 	cin >> c;
 	if (a == 0.0) {
 		cout << "not a quadratic equation" << endl;
-		double x1 = -c / b;
-		cout << "the only solution is x= " << x1 << endl;
+		x1 = -c / b;
+		cout << "the only solution is x= " << x1.real() << endl;
 	}
 	else { 
 		
-		double diskriminant = (pow(b, 2.0) - 4 * a * c);
-		if (diskriminant> 0) {
-			double x1 = (-b + sqrt(diskriminant)) / (2 * a);
-			double x2 = (-b - sqrt(diskriminant)) / (2 * a);
-			cout << "Two real solutions:"<<endl<<"x1 = " << x1 << endl << "x2 = " << x2<< endl;
+		double discriminant = (pow(b, 2.0) - 4 * a * c);
+		if (discriminant> 0) {
+			
+			x1 = (-b + sqrt(discriminant)) / (2 * a);
+			x2 = (-b - sqrt(discriminant)) / (2 * a);
+			cout << "Two real solutions:"<<endl<<"x1 = " << x1.real() << endl << "x2 = " << x2.real()<< endl;
 		}
-		else if (diskriminant==0.0){ 
+		else if (discriminant==0.0){ 
 			double x = (-b / (2 * a));
 			cout << "The only solution is x= "<<x<<endl; }
-		else { cout << "fdfhis"; }
+		else { 
+			 x1= complex<double> ((-b / (2 * a)), sqrt(-discriminant) / (2 * a));
+			
+			
+			cout << "First root: " << x1 << endl;
+			cout << "Second root: " << x2 << endl;
+
+		
+		}
 	
 	}
 }
