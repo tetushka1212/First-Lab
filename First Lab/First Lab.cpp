@@ -33,6 +33,16 @@ int ActionChooser() {
 	if (case_num > 0 && case_num < 6) { return case_num; }
 	else { cout << "Error.Try again \n"; return -1; }
 }
+void Distance() {
+	double distance,x1,x2,z1,z2,y1,y2;
+	cout << "Enter first point(x1,y1,z1): ";
+	cin >> x1 >> y1 >> z1;
+	cout << "Enter second point(x2,y2,z2): ";
+	cin >> x2 >> y2 >> z2;
+
+	distance = sqrt(pow((x2 - x1), 2.0) + pow((y2 - y1), 2.0)+ pow((z2 - z1), 2.0));
+	cout << distance;
+}
 void QuadraticEquation() {
 	double a, b, c;
 	complex <double> x1;
