@@ -35,15 +35,31 @@ int ActionChooser() {
 }
 void QuadraticEquation() {
 	double a, b, c;
-	cout << 'a= ' << endl;
+	
+	cout << "a = " << endl;
 	cin >> a;
-	cout << 'b= ' << endl;
+	cout << "b= " << endl;
 	cin >> b;
-	cout << 'c= ' << endl;
+	cout << "c= " << endl;
 	cin >> c;
 	if (a == 0.0) {
 		cout << "not a quadratic equation" << endl;
-
+		double x1 = -c / b;
+		cout << "the only solution is x= " << x1 << endl;
+	}
+	else { 
+		
+		double diskriminant = (pow(b, 2.0) - 4 * a * c);
+		if (diskriminant> 0) {
+			double x1 = (-b + sqrt(diskriminant)) / (2 * a);
+			double x2 = (-b - sqrt(diskriminant)) / (2 * a);
+			cout << "Two real solutions:"<<endl<<"x1 = " << x1 << endl << "x2 = " << x2<< endl;
+		}
+		else if (diskriminant==0.0){ 
+			double x = (-b / (2 * a));
+			cout << "The only solution is x= "<<x<<endl; }
+		else { cout << "fdfhis"; }
+	
 	}
 }
 void ActionScene() {
@@ -55,7 +71,7 @@ void ActionScene() {
 	case 1:
 		//Решение квадратного уравнения
 		cout << "ax^2 + bx + c = 0\n";
-
+		QuadraticEquation();
 		break;
 	}
 }
