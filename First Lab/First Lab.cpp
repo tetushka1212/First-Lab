@@ -157,7 +157,7 @@ static void QuadraticEquation() {
 			
 			x1 = (-b + sqrt(discriminant)) / (2 * a);
 			x2 = (-b - sqrt(discriminant)) / (2 * a);
-			cout << "Two real solutions:"<<endl<<"x1 = " << x1.real() << endl << "x2 = " << x2.real()<< endl;
+			cout << "Two real solutions:" << endl << "x1 = " << x1.real() << endl << "x2 = " << x2.real() << endl;
 		}
 		else if (discriminant==0.0){ 
 			double x = (-b / (2 * a));
