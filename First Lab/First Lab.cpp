@@ -33,6 +33,26 @@ static int ActionChooser() {
 	if (case_num > 0 && case_num < 6) { return case_num; }
 	else { cout << "Error.Try again \n"; return -1; }
 }
+int get_alph_num(char letter) {
+	if (letter >= 'a' && letter <= 'z') {
+		return letter - 'a' + 1;
+
+	}
+	else {
+		return -1;
+	}
+}
+void GetNumberOfLetter() {
+	string word;
+	cout << "Enter your word: " << endl;
+	cin >> word;
+	cout << "Your word's letters numbers are: ";
+	for (int i = 0; i < word.length(); i++) {
+		int number = get_alph_num(tolower(word[i]));
+		if (number != -1) {cout << number << " ";}
+		else {cout << "Oops... Try another word, make sure u use english alphabet." << endl;}
+	}
+}
 static void AreaQuadrangle() {
 	double x1, y1, x2, y2, x3, y3, x4, y4;
 	double  area_quadrangle;
@@ -113,7 +133,7 @@ static void TriangleArea() {
 	else { cout << "Not a triangle. Try again with other points " << endl; }
 }
 static void ActionScene() {
-	cout << "FIRST PRACTICE\n1 - Quadratic equation\n2 - Triangle area\n3 - Distance between two points\n4 - Quadrangle area\n ";
+	cout << "FIRST PRACTICE\n1 - Quadratic equation\n2 - Triangle area\n3 - Distance between two points\n4 - Quadrangle area\n5 - Get letter's alphabet number from given word (english)\n ";
 	switch (ActionChooser())
 	{
 
@@ -135,7 +155,10 @@ static void ActionScene() {
 		//Площадь четырехугольника по координатам точек
 		AreaQuadrangle();
 		break;
-	
+	case 5:
+		//Вывод порядкового номера каждой буквы введенной строки в английском алфавите  
+		GetNumberOfLetter();
+		break;
 	}
 }
 int main() {
