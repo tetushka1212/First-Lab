@@ -30,7 +30,7 @@ static int ActionChooser() {
 		case_num = -1;
 
 	}
-	if (case_num > 0 && case_num < 6) { return case_num; }
+	if (case_num > 0 && case_num < 8) { return case_num; }
 	else { cout << "Error.Try again \n"; return -1; }
 }
 static int GetAlphabeticOrderingNumber(char letter) {
@@ -158,6 +158,9 @@ static void ActionScene() {
 	case 5:
 		//Вывод порядкового номера каждой буквы введенной строки в английском алфавите  
 		GetWordsLettersNumber();
+		break;
+	case 6:
+		//Решение кубического уравнения
 		break;
 	}
 }
