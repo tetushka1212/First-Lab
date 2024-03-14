@@ -37,11 +37,11 @@ void QuadraticEquation() {
 	double a, b, c;
 	complex <double> x1;
 	complex <double> x2;
-	cout << "a = " << endl;
+	cout << "a = " ;
 	cin >> a;
-	cout << "b= " << endl;
+	cout << "b= " ;
 	cin >> b;
-	cout << "c= " << endl;
+	cout << "c= " ;
 	cin >> c;
 	if (a == 0.0) {
 		cout << "not a quadratic equation" << endl;
@@ -61,11 +61,12 @@ void QuadraticEquation() {
 			double x = (-b / (2 * a));
 			cout << "The only solution is x= "<<x<<endl; }
 		else { 
-			 x1= complex<double> ((-b / (2 * a)), sqrt(-discriminant) / (2 * a));
+			x1.real(-b / (2 * a));
+			x1.imag(sqrt(-discriminant) / (2 * a));
+			x2 = conj(x1);
 			
+			cout << "Two imaginal solutions:" << endl << "x1 = " << x1.real() <<" +("<<x1.imag()<<")i" << endl << "x2 = " << x2.real() << " +(" << x2.imag() << ")i"<< endl;
 			
-			cout << "First root: " << x1 << endl;
-			cout << "Second root: " << x2 << endl;
 
 		
 		}
