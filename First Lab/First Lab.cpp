@@ -5,6 +5,8 @@
 #include <complex>
 
 using namespace std;
+const double pi = 3.141592653589793238463;
+
 static int ActionChooser() {
 	string case_num_input;
 	int case_num;
@@ -32,6 +34,68 @@ static int ActionChooser() {
 	}
 	if (case_num > 0 && case_num < 8) { return case_num; }
 	else { cout << "Error.Try again \n"; return -1; }
+}
+void cube_sol() {
+	double a, b, c, d;
+	cin >> a, b, c, d;
+	double p;
+	double q;
+	double disk;
+	double fi;
+	double disk2;
+	p = (3.0 * a * c - b * b) / (3.0 * a * a);
+	q = (-9.0 * a * b * c + 27.0 * a * a * d + 2.0 * b * b * b) / (27.0 * a * a * a);
+	disk = (p / 3.0) * (p / 3.0) * (p / 3.0) + (q / 2.0) * (q / 2.0);
+	cout << disk << "  after enterence" << endl;
+	disk2 = disk;
+	if (disk < 0) {
+		cout << disk << "3 real" << endl;
+		double y1;
+		double y2;
+		double y3;
+		double x1;
+		double x2;
+		double x3;
+		if (q < 0) { fi = atan(sqrt(disk) / (-q / 2.0)); }
+		else if (q == 0) { fi = pi / 2.0; }
+		else { fi = (atan(sqrt(-disk) / (-q / 2.0))) + pi; }
+
+		x1 = 2 * (sqrt(-p / 3.0)) * cos(fi / 3.0) - (b / 3.0 * a);
+		x2 = 2 * (sqrt(-p / 3.0)) * cos((fi / 3.0) + (2.0 * pi / 3.0)) - (b / 3.0 * a);
+		x3 = 2 * (sqrt(-p / 3.0)) * cos((fi / 3.0) + (4.0 * pi / 3.0)) - (b / 3.0 * a);
+		cout << "3 real sol:" << x1 << ", " << x2 << ", " << x3 << endl;
+
+	}
+	else if (disk == 0.0) {
+		cout << disk << "2 real" << endl;
+		double y1;
+		double y2;
+		double x1;
+		double x2;
+		y1 = 2 * cbrt(-q / 2.0);
+		y2 = -cbrt(-q / 2.0);
+		x1 = y1 - (b / 3.0 * a);
+		x2 = y2 - (b / 3.0 * a);
+		cout << "2 real sol:" << x1 << ", " << x2 << endl;
+
+	}
+	else {
+		cout << "2 compl" << endl;
+		double y1;
+		double x1;
+		double s = cbrt((-q / 2) + sqrt(disk2));
+		double t = cbrt((-q / 2) - sqrt(disk2));
+		cout << "s" << s << endl << "t" << t << endl;
+		y1 = s + t;
+		x1 = y1 - (b / 3 * a);
+		complex<double> y2(-0.5 * (s + t), (sqrt(3.0) / 2.0) * (s - t));
+		cout << "y2" << y2 << endl << endl;
+		complex<double> x2(y2.real() - (b / 3.0 * a), y2.imag());
+		complex<double> x3(conj(x2));
+		cout << "1 real sol:" << x1 << ", 2 complex sol:" << "x2" << x2 << ", " << "x3" << x3 << endl;
+
+	}
+
 }
 static int GetAlphabeticOrderingNumber(char letter) {
 	if (letter >= 'a' && letter <= 'z') {
@@ -161,6 +225,7 @@ static void ActionScene() {
 		break;
 	case 6:
 		//Решение кубического уравнения
+		cout << M_PI;
 		break;
 	}
 }
