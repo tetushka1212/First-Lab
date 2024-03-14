@@ -111,6 +111,10 @@ void ActionScene() {
 		//Площадь треугольника по координатам трех точек 
 		TriangleArea();
 		break;
+	case 3:
+		//Расстояние между двумя точками
+		Distance();
+		break;
 	}
 }
 int main() {
