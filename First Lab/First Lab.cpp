@@ -33,7 +33,7 @@ static int ActionChooser() {
 	if (case_num > 0 && case_num < 6) { return case_num; }
 	else { cout << "Error.Try again \n"; return -1; }
 }
-int get_alph_num(char letter) {
+static int GetAlphabeticOrderingNumber(char letter) {
 	if (letter >= 'a' && letter <= 'z') {
 		return letter - 'a' + 1;
 
@@ -42,13 +42,13 @@ int get_alph_num(char letter) {
 		return -1;
 	}
 }
-void GetNumberOfLetter() {
+static void GetWordsLettersNumber() {
 	string word;
 	cout << "Enter your word: " << endl;
 	cin >> word;
 	cout << "Your word's letters numbers are: ";
 	for (int i = 0; i < word.length(); i++) {
-		int number = get_alph_num(tolower(word[i]));
+		int number = GetAlphabeticOrderingNumber(tolower(word[i]));
 		if (number != -1) {cout << number << " ";}
 		else {cout << "Oops... Try another word, make sure u use english alphabet." << endl;}
 	}
@@ -157,7 +157,7 @@ static void ActionScene() {
 		break;
 	case 5:
 		//Вывод порядкового номера каждой буквы введенной строки в английском алфавите  
-		GetNumberOfLetter();
+		GetWordsLettersNumber();
 		break;
 	}
 }
