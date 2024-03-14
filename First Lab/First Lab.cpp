@@ -37,7 +37,8 @@ static int ActionChooser() {
 }
 void cube_sol() {
 	double a, b, c, d;
-	cin >> a, b, c, d;
+	cin >> a>> b>> c>> d;
+	complex <double>x1, x2, x3;
 	double p;
 	double q;
 	double disk;
@@ -50,49 +51,34 @@ void cube_sol() {
 	disk2 = disk;
 	if (disk < 0) {
 		cout << disk << "3 real" << endl;
-		double y1;
-		double y2;
-		double y3;
-		double x1;
-		double x2;
-		double x3;
 		if (q < 0) { fi = atan(sqrt(disk) / (-q / 2.0)); }
 		else if (q == 0) { fi = pi / 2.0; }
 		else { fi = (atan(sqrt(-disk) / (-q / 2.0))) + pi; }
 
-		x1 = 2 * (sqrt(-p / 3.0)) * cos(fi / 3.0) - (b / 3.0 * a);
-		x2 = 2 * (sqrt(-p / 3.0)) * cos((fi / 3.0) + (2.0 * pi / 3.0)) - (b / 3.0 * a);
-		x3 = 2 * (sqrt(-p / 3.0)) * cos((fi / 3.0) + (4.0 * pi / 3.0)) - (b / 3.0 * a);
-		cout << "3 real sol:" << x1 << ", " << x2 << ", " << x3 << endl;
+		x1.real(2 * (sqrt(-p / 3.0)) * cos(fi / 3.0) - (b / 3.0 * a));
+		x2.real(2 * (sqrt(-p / 3.0)) * cos((fi / 3.0) + (2.0 * pi / 3.0)) - (b / 3.0 * a));
+		x3.real(2 * (sqrt(-p / 3.0)) * cos((fi / 3.0) + (4.0 * pi / 3.0)) - (b / 3.0 * a));
+		cout << "3 real sol:" << x1.real() << ", " << x2.real() << ", " << x3.real() << endl;
 
 	}
 	else if (disk == 0.0) {
 		cout << disk << "2 real" << endl;
-		double y1;
-		double y2;
-		double x1;
-		double x2;
-		y1 = 2 * cbrt(-q / 2.0);
-		y2 = -cbrt(-q / 2.0);
-		x1 = y1 - (b / 3.0 * a);
-		x2 = y2 - (b / 3.0 * a);
-		cout << "2 real sol:" << x1 << ", " << x2 << endl;
+		x1.real( 2 * cbrt(-q / 2.0)  - (b / 3.0 * a));
+		x2.real( - cbrt(-q / 2.0) - (b / 3.0 * a));
+		cout << "2 real sol:" << x1.real() << ", " << x2.real() << endl;
 
 	}
 	else {
 		cout << "2 compl" << endl;
-		double y1;
-		double x1;
+		
 		double s = cbrt((-q / 2) + sqrt(disk2));
 		double t = cbrt((-q / 2) - sqrt(disk2));
 		cout << "s" << s << endl << "t" << t << endl;
-		y1 = s + t;
-		x1 = y1 - (b / 3 * a);
-		complex<double> y2(-0.5 * (s + t), (sqrt(3.0) / 2.0) * (s - t));
-		cout << "y2" << y2 << endl << endl;
-		complex<double> x2(y2.real() - (b / 3.0 * a), y2.imag());
+		x1.real( s + t - (b / 3 * a));
+		x2.real(-0.5 * (s + t) - (b / 3.0 * a));
+		x2.imag((sqrt(3.0) / 2.0) * (s - t));
 		complex<double> x3(conj(x2));
-		cout << "1 real sol:" << x1 << ", 2 complex sol:" << "x2" << x2 << ", " << "x3" << x3 << endl;
+		cout << "1 real sol:" << x1.real() << ", 2 complex sol:" << "x2" << x2 << ", " << "x3" << x3 << endl;
 
 	}
 
@@ -225,7 +211,7 @@ static void ActionScene() {
 		break;
 	case 6:
 		//Решение кубического уравнения
-		cout << M_PI;
+		cube_sol();
 		break;
 	}
 }
