@@ -37,7 +37,9 @@ static int ActionChooser() {
 }
 static void BitWiseAddition() {
 	string num1, num2;
+	cout << "Enter first number: ";
 	cin >> num1;
+	cout << "\nEnter second number: ";
 	cin >> num2;
 	int maxlen = max(num1.length(), num2.length());
 	num1 = string(maxlen - num1.length(), '0') + num1;
@@ -55,7 +57,7 @@ static void BitWiseAddition() {
 		result = to_string(residue) + result;
 	}
 
-	cout<< result;
+	cout << "Bit wise addition result: " << result << endl;
 }
 static void CubicEquation() {
 	double a, b, c, d;
@@ -242,11 +244,15 @@ static void ActionScene() {
 		cout << "ax^3 + bx^2 + cx + d = 0\n";
 		CubicEquation();
 		break;
+	case 7:
+		//Поразрядные операции с числами введенными ввиде строк
+		BitWiseAddition();
+
 
 	}
 }
 int main() {
-	/*ActionScene();*/
-	BitWiseAddition();
+	ActionScene();
+	
 }
 
