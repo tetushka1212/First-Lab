@@ -33,6 +33,21 @@ int ActionChooser() {
 	if (case_num > 0 && case_num < 6) { return case_num; }
 	else { cout << "Error.Try again \n"; return -1; }
 }
+void AreaQuadrangle() {
+	double x1, y1, x2, y2, x3, y3, x4, y4;
+	double  area_quadrangle;
+	cout << "Enter first point(x1,y1): " << endl;
+	cin >> x1 >> y1;
+	cout << "Enter second point(x2,y2): " << endl;
+	cin >> x2 >> y2;
+	cout << "Enter third point(x3,y3): " << endl;
+	cin >> x3 >> y3;
+	cout << "Enter fourth point(x4,y4): " << endl;
+	cin >> x4 >> y4;
+	area_quadrangle = fabs((x1 - x2) * (y1 + y2) + (x2 - x3) * (y2 + y3) + (x3 - x4) * (y3 + y4) + (x4 - x1) * (y4 + y1)) / 2.0;
+	if (area_quadrangle != 0) { cout << area_quadrangle << endl; }
+	else { cout << "Not a quadrangle. Try other coordinates." << endl; }
+}
 void Distance() {
 	double distance,x1,x2,z1,z2,y1,y2;
 	cout << "Enter first point(x1,y1,z1): ";
@@ -41,7 +56,8 @@ void Distance() {
 	cin >> x2 >> y2 >> z2;
 
 	distance = sqrt(pow((x2 - x1), 2.0) + pow((y2 - y1), 2.0)+ pow((z2 - z1), 2.0));
-	cout << distance;
+	if (distance != 0) { cout << distance << endl; }
+	else { cout << "Oops. There is an only point. Try again" << endl; }
 }
 void QuadraticEquation() {
 	double a, b, c;
@@ -97,7 +113,7 @@ void TriangleArea() {
 	else { cout << "Not a triangle. Try again with other points " << endl; }
 }
 void ActionScene() {
-	cout << "FIRST PRACTICE\n1 - Quadratic equation\n2 - Triangle Area\n ";
+	cout << "FIRST PRACTICE\n1 - Quadratic equation\n2 - Triangle area\n3- Distance between two points\n4- Quadrangle area\n ";
 	switch (ActionChooser())
 	{
 
@@ -114,6 +130,10 @@ void ActionScene() {
 	case 3:
 		//Расстояние между двумя точками
 		Distance();
+		break;
+	case 4:
+		//Площадь четырехугольника по координатам точек
+		AreaQuadrangle();
 		break;
 	}
 }
