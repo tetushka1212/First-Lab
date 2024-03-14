@@ -35,6 +35,28 @@ static int ActionChooser() {
 	if (case_num > 0 && case_num < 8) { return case_num; }
 	else { cout << "Error.Try again \n"; return -1; }
 }
+static void BitWiseAddition() {
+	string num1, num2;
+	cin >> num1;
+	cin >> num2;
+	int maxlen = max(num1.length(), num2.length());
+	num1 = string(maxlen - num1.length(), '0') + num1;
+	num2 = string(maxlen - num2.length(), '0') + num2;
+
+	string result = "";
+	int residue = 0;
+	for (int i = maxlen - 1; i >= 0; i--) {
+		int bit_sum = (num1[i] - '0') + (num2[i] - '0') + residue;
+		result = to_string(bit_sum % 10) + result;
+		residue = bit_sum / 10;
+	}
+
+	if (residue) {
+		result = to_string(residue) + result;
+	}
+
+	cout<< result;
+}
 static void CubicEquation() {
 	double a, b, c, d;
 	cout << "Enter a: \n";
@@ -220,9 +242,11 @@ static void ActionScene() {
 		cout << "ax^3 + bx^2 + cx + d = 0\n";
 		CubicEquation();
 		break;
+
 	}
 }
 int main() {
-	ActionScene();
+	/*ActionScene();*/
+	BitWiseAddition();
 }
 
