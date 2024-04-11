@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ActionChooser.cpp" />
+    <ClCompile Include="ActionScene.cpp" />
     <ClCompile Include="AreaQuadrangle.cpp" />
     <ClCompile Include="CubicEquation.cpp" />
     <ClCompile Include="Distance.cpp" />
