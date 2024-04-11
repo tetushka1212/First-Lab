@@ -1,8 +1,4 @@
 ﻿
-#include <iostream>
-#include <string>
-#include <cmath>
-#include <complex>
 #include "QuadraticEquation.h"
 #include "TriangleArea.h"
 #include "CubicEquation.h"
@@ -12,58 +8,30 @@
 
 
 
-static int ActionChooser() {
-	string case_num_input;
-	int case_num;
-
-	cout << "Choose your case: ";
-	cin >> case_num_input;
-
-	case_num = stoi(case_num_input);
-	try
-	{
-		case_num = stoi(case_num_input);
-	}
-	catch (invalid_argument)
-	{
-		// Можно вводить только числа
-		cout << "Only numbers are allowed! \n";
-		case_num = -1;
-	}
-	catch (...)
-	{
-		//Если будет выброшено какое-то исключение, которое не обработано выше, то говорим, что возникла неизвестная ошибка
-		cout << "Unknown error! \n";
-		case_num = -1;
-
-	}
-	if (case_num > 0 && case_num < 8) { return case_num; }
-	else { cout << "Error.Try again \n"; return -1; }
-}
-static void BitWiseAddition() {
-	string num1, num2;
-	cout << "Enter first number: ";
-	cin >> num1;
-	cout << "\nEnter second number: ";
-	cin >> num2;
-	int maxlen = max(num1.length(), num2.length());
-	num1 = string(maxlen - num1.length(), '0') + num1;
-	num2 = string(maxlen - num2.length(), '0') + num2;
-
-	string result = "";
-	int residue = 0;
-	for (int i = maxlen - 1; i >= 0; i--) {
-		int bit_sum = (num1[i] - '0') + (num2[i] - '0') + residue;
-		result = to_string(bit_sum % 10) + result;
-		residue = bit_sum / 10;
-	}
-
-	if (residue) {
-		result = to_string(residue) + result;
-	}
-
-	cout << "Bit wise addition result: " << result << endl;
-}
+//static void BitWiseAddition() {
+//	string num1, num2;
+//	cout << "Enter first number: ";
+//	cin >> num1;
+//	cout << "\nEnter second number: ";
+//	cin >> num2;
+//	int maxlen = max(num1.length(), num2.length());
+//	num1 = string(maxlen - num1.length(), '0') + num1;
+//	num2 = string(maxlen - num2.length(), '0') + num2;
+//
+//	string result = "";
+//	int residue = 0;
+//	for (int i = maxlen - 1; i >= 0; i--) {
+//		int bit_sum = (num1[i] - '0') + (num2[i] - '0') + residue;
+//		result = to_string(bit_sum % 10) + result;
+//		residue = bit_sum / 10;
+//	}
+//
+//	if (residue) {
+//		result = to_string(residue) + result;
+//	}
+//
+//	cout << "Bit wise addition result: " << result << endl;
+//}
 //static void BitWiseSubtruction() {
 //	string num1, num2;
 //	cout << "Enter first number: ";
@@ -122,10 +90,10 @@ static void ActionScene() {
 		cout << "ax^3 + bx^2 + cx + d = 0\n";
 		CubicEquation();
 		break;
-	case 7:
-		//Поразрядные операции с числами введенными ввиде строк
-		BitWiseAddition();
-		/*BitWiseSubtruction();*/
+	//case 7:
+	//	//Поразрядные операции с числами введенными ввиде строк
+	//	BitWiseAddition();
+	//	BitWiseSubtruction();
 
 
 	}
