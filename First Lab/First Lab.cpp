@@ -9,8 +9,7 @@
 #include "Distance.h"
 #include "AreaQuadrangle.h"
 
-using namespace std;
-const double pi = 3.141592653589793238463;
+
 
 static int ActionChooser() {
 	string case_num_input;
