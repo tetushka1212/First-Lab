@@ -1,109 +1,58 @@
-﻿
-#include <iostream>
-#include <string>
-#include <cmath>
-#include <complex>
+﻿#include "ActionScene.h"
 
-using namespace std;
-int ActionChooser() {
-	string case_num_input;
-	int case_num;
+//static void BitWiseAddition() {
+//	string num1, num2;
+//	cout << "Enter first number: ";
+//	cin >> num1;
+//	cout << "\nEnter second number: ";
+//	cin >> num2;
+//	int maxlen = max(num1.length(), num2.length());
+//	num1 = string(maxlen - num1.length(), '0') + num1;
+//	num2 = string(maxlen - num2.length(), '0') + num2;
+//
+//	string result = "";
+//	int residue = 0;
+//	for (int i = maxlen - 1; i >= 0; i--) {
+//		int bit_sum = (num1[i] - '0') + (num2[i] - '0') + residue;
+//		result = to_string(bit_sum % 10) + result;
+//		residue = bit_sum / 10;
+//	}
+//
+//	if (residue) {
+//		result = to_string(residue) + result;
+//	}
+//
+//	cout << "Bit wise addition result: " << result << endl;
+//}
+//static void BitWiseSubtruction() {
+//	string num1, num2;
+//	cout << "Enter first number: ";
+//	cin >> num1;
+//	cout << "\nEnter second number: ";
+//	cin >> num2;
+//	int maxlen = max(num1.length(), num2.length());
+//	num1 = string(maxlen - num1.length(), '0') + num1;
+//	num2 = string(maxlen - num2.length(), '0') + num2;
+//
+//	string result = "";
+//	int borrow = 0;
+//	for (int i = maxlen - 1; i >= 0; i--) {
+//		int diff = (num1[i] - '0') - (num2[i] - '0') - borrow;
+//		if (diff < 0) {
+//			diff += 10;
+//			borrow = 1;
+//		}
+//		else {
+//			borrow = 0;
+//		}
+//		result = to_string(diff) + result;
+//	}
+//	
+//	cout << result;
+//}
 
-	cout << "Choose your case: ";
-	cin >> case_num_input;
-
-	case_num = stoi(case_num_input);
-	try
-	{
-		case_num = stoi(case_num_input);
-	}
-	catch (invalid_argument)
-	{
-		// Можно вводить только числа
-		cout << "Only numbers are allowed! \n";
-		case_num = -1;
-	}
-	catch (...)
-	{
-		//Если будет выброшено какое-то исключение, которое не обработано выше, то говорим, что возникла неизвестная ошибка
-		cout << "Unknown error! \n";
-		case_num = -1;
-
-	}
-	if (case_num > 0 && case_num < 6) { return case_num; }
-	else { cout << "Error.Try again \n"; return -1; }
-}
-void QuadraticEquation() {
-	double a, b, c;
-	complex <double> x1;
-	complex <double> x2;
-	cout << "a = " ;
-	cin >> a;
-	cout << "b= " ;
-	cin >> b;
-	cout << "c= " ;
-	cin >> c;
-	if (a == 0.0) {
-		cout << "not a quadratic equation" << endl;
-		x1 = -c / b;
-		cout << "the only solution is x= " << x1.real() << endl;
-	}
-	else { 
-		
-		double discriminant = (pow(b, 2.0) - 4 * a * c);
-		if (discriminant> 0) {
-			
-			x1 = (-b + sqrt(discriminant)) / (2 * a);
-			x2 = (-b - sqrt(discriminant)) / (2 * a);
-			cout << "Two real solutions:"<<endl<<"x1 = " << x1.real() << endl << "x2 = " << x2.real()<< endl;
-		}
-		else if (discriminant==0.0){ 
-			double x = (-b / (2 * a));
-			cout << "The only solution is x= "<<x<<endl; }
-		else { 
-			x1.real(-b / (2 * a));
-			x1.imag(sqrt(-discriminant) / (2 * a));
-			x2 = conj(x1);
-			
-			cout << "Two imaginal solutions:" << endl << "x1 = " << x1.real() <<" +("<<x1.imag()<<")i" << endl << "x2 = " << x2.real() << " +(" << x2.imag() << ")i"<< endl;
-			
-
-		
-		}
-	
-	}
-}
-void TriangleArea() {
-	double area,x1,x2,x3,y1,y2,y3;
-	cout << "First point (x1,y1): " << endl;
-	cin >> x1 >> y1;
-	cout << "Second point (x2,y2): " << endl;
-	cin >> x2 >> y2;
-	cout << "Third point (x3,y3): " << endl;
-	cin >> x3 >> y3;
-
-	area = fabs(((x2 - x1) * (y3 - y1) - (x3 - x1) * (y2 - y1)) / 2.0);
-	if (area != 0) { cout << (area) << endl; }
-	else { cout << "Not a triangle. Try again with other points " << endl; }
-}
-void ActionScene() {
-	cout << "FIRST PRACTICE\n1 - Quadratic equation\n2 - Triangle Area\n ";
-	switch (ActionChooser())
-	{
-
-
-	case 1:
-		//Решение квадратного уравнения
-		cout << "ax^2 + bx + c = 0\n";
-		QuadraticEquation();
-		break;
-	case 2:
-		//Площадь треугольника по координатам трех точек 
-		TriangleArea();
-		break;
-	}
-}
-int main() {
+int main() 
+{
 	ActionScene();
 }
 

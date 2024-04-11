@@ -127,7 +127,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ActionChooser.cpp" />
+    <ClCompile Include="ActionScene.cpp" />
+    <ClCompile Include="AreaQuadrangle.cpp" />
+    <ClCompile Include="CubicEquation.cpp" />
+    <ClCompile Include="Distance.cpp" />
     <ClCompile Include="First Lab.cpp" />
+    <ClCompile Include="GetAlphOrdNum.cpp" />
+    <ClCompile Include="GetWordsLettersNumber.cpp" />
+    <ClCompile Include="QuadraticEquation.cpp" />
+    <ClCompile Include="TriangleArea.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ActionChooser.h" />
+    <ClInclude Include="ActionScene.h" />
+    <ClInclude Include="AreaQuadrangle.h" />
+    <ClInclude Include="CubicEquation.h" />
+    <ClInclude Include="Distance.h" />
+    <ClInclude Include="GetAlphOrdNum.h" />
+    <ClInclude Include="GetWordsLettersNumber.h" />
+    <ClInclude Include="QuadraticEquation.h" />
+    <ClInclude Include="TriangleArea.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
