@@ -129,9 +129,11 @@
   <ItemGroup>
     <ClCompile Include="First Lab.cpp" />
     <ClCompile Include="QuadraticEquation.cpp" />
+    <ClCompile Include="TriangleArea.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="QuadraticEquation.h" />
+    <ClInclude Include="TriangleArea.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
