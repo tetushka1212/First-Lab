@@ -8,6 +8,7 @@
 #include "CubicEquation.h"
 #include "Distance.h"
 #include "AreaQuadrangle.h"
+#include "GetWordsLettersNumber.h"
 
 
 
@@ -89,27 +90,6 @@ static void BitWiseAddition() {
 //	
 //	cout << result;
 //}
-
-static int GetAlphabeticOrderingNumber(char letter) {
-	if (letter >= 'a' && letter <= 'z') {
-		return letter - 'a' + 1;
-
-	}
-	else {
-		return -1;
-	}
-}
-static void GetWordsLettersNumber() {
-	string word;
-	cout << "Enter your word: " << endl;
-	cin >> word;
-	cout << "Your word's letters numbers are: ";
-	for (int i = 0; i < word.length(); i++) {
-		int number = GetAlphabeticOrderingNumber(tolower(word[i]));
-		if (number != -1) {cout << number << " ";}
-		else {cout << "Oops... Try another word, make sure u use english alphabet." << endl;}
-	}
-}
 static void ActionScene() {
 	cout << "FIRST PRACTICE\n1 - Quadratic equation\n2 - Triangle area\n3 - Distance between two points\n4 - Quadrangle area\n5 - Get letter's alphabet number from given word (english)\n6 - Cubical equation\n ";
 	switch (ActionChooser())

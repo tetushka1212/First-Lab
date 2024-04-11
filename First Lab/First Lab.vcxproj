@@ -131,6 +131,8 @@
     <ClCompile Include="CubicEquation.cpp" />
     <ClCompile Include="Distance.cpp" />
     <ClCompile Include="First Lab.cpp" />
+    <ClCompile Include="GetAlphOrdNum.cpp" />
+    <ClCompile Include="GetWordsLettersNumber.cpp" />
     <ClCompile Include="QuadraticEquation.cpp" />
     <ClCompile Include="TriangleArea.cpp" />
   </ItemGroup>
@@ -138,6 +140,8 @@
     <ClInclude Include="AreaQuadrangle.h" />
     <ClInclude Include="CubicEquation.h" />
     <ClInclude Include="Distance.h" />
+    <ClInclude Include="GetAlphOrdNum.h" />
+    <ClInclude Include="GetWordsLettersNumber.h" />
     <ClInclude Include="QuadraticEquation.h" />
     <ClInclude Include="TriangleArea.h" />
   </ItemGroup>
