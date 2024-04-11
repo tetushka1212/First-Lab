@@ -128,6 +128,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="First Lab.cpp" />
+    <ClCompile Include="QuadraticEquation.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="QuadraticEquation.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
