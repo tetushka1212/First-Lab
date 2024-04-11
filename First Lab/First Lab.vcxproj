@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AreaQuadrangle.cpp" />
     <ClCompile Include="CubicEquation.cpp" />
     <ClCompile Include="Distance.cpp" />
     <ClCompile Include="First Lab.cpp" />
@@ -134,6 +135,7 @@
     <ClCompile Include="TriangleArea.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AreaQuadrangle.h" />
     <ClInclude Include="CubicEquation.h" />
     <ClInclude Include="Distance.h" />
     <ClInclude Include="QuadraticEquation.h" />
