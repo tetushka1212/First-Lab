@@ -6,6 +6,7 @@
 #include "QuadraticEquation.h"
 #include "TriangleArea.h"
 #include "CubicEquation.h"
+#include "Distance.h"
 
 using namespace std;
 const double pi = 3.141592653589793238463;
@@ -123,17 +124,6 @@ static void AreaQuadrangle() {
 	area_quadrangle = fabs((x1 - x2) * (y1 + y2) + (x2 - x3) * (y2 + y3) + (x3 - x4) * (y3 + y4) + (x4 - x1) * (y4 + y1)) / 2.0;
 	if (area_quadrangle != 0) { cout << "Your quadrangle's area is " << area_quadrangle << endl; }
 	else { cout << "Not a quadrangle. Try other coordinates." << endl; }
-}
-static void Distance() {
-	double distance,x1,x2,z1,z2,y1,y2;
-	cout << "Enter first point(x1,y1,z1): ";
-	cin >> x1 >> y1 >> z1;
-	cout << "Enter second point(x2,y2,z2): ";
-	cin >> x2 >> y2 >> z2;
-
-	distance = sqrt(pow((x2 - x1), 2.0) + pow((y2 - y1), 2.0)+ pow((z2 - z1), 2.0));
-	if (distance != 0) { cout << "Distance between your points is " << distance << endl; }
-	else { cout << "Oops. There is an only point. Try again" << endl; }
 }
 static void ActionScene() {
 	cout << "FIRST PRACTICE\n1 - Quadratic equation\n2 - Triangle area\n3 - Distance between two points\n4 - Quadrangle area\n5 - Get letter's alphabet number from given word (english)\n6 - Cubical equation\n ";

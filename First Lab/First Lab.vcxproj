@@ -128,12 +128,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CubicEquation.cpp" />
+    <ClCompile Include="Distance.cpp" />
     <ClCompile Include="First Lab.cpp" />
     <ClCompile Include="QuadraticEquation.cpp" />
     <ClCompile Include="TriangleArea.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CubicEquation.h" />
+    <ClInclude Include="Distance.h" />
     <ClInclude Include="QuadraticEquation.h" />
     <ClInclude Include="TriangleArea.h" />
   </ItemGroup>
